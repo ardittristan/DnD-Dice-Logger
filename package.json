@@ -1,0 +1,16 @@
+{
+  "name": "dicelog",
+  "version": "1.0.0",
+  "description": "log dice throws to database",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "author": "ardittristan",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "input": "^1.0.1",
+    "sqlite3": "^4.1.1"
+  }
+}

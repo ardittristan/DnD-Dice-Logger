@@ -1,0 +1,5 @@
+node_modules
+*.db
+*.ico
+package-lock.json
+*.lnk
