@@ -1,8 +1,5 @@
 node_modules
 *.db
-*.ico
 package-lock.json
 *.lnk
-build/*
-!build/node_sqlite3.node
-*.zip
+build
