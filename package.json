@@ -6,7 +6,7 @@
   "bin": "main.js",
   "scripts": {
     "test": "node main.js",
-    "build": "pkg ./build"
+    "build": "pkg . --out-path ./build && node archive.js"
   },
   "author": "ardittristan",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
+    "easy-zip2": "^3.1.0",
     "pkg": "^4.4.8"
   }
 }

@@ -4,4 +4,5 @@ node_modules
 package-lock.json
 *.lnk
 build/*
-!build/.folder
+!build/node_sqlite3.node
+*.zip
