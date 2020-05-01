@@ -1,6 +1,6 @@
 {
   "name": "dicelog",
-  "version": "1.1",
+  "version": "1.0.0",
   "description": "log dice throws to database",
   "main": "main.js",
   "bin": "main.js",
