@@ -3,3 +3,5 @@ node_modules
 *.ico
 package-lock.json
 *.lnk
+build/*
+!build/.folder

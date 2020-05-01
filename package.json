@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "log dice throws to database",
   "main": "main.js",
+  "bin": "main.js",
   "scripts": {
-    "test": "node main.js"
+    "test": "node main.js",
+    "build": "pkg ./build"
   },
   "author": "ardittristan",
   "license": "ISC",
@@ -12,5 +14,8 @@
     "colors": "^1.4.0",
     "input": "^1.0.1",
     "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.8"
   }
 }
