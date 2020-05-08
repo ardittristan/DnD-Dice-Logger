@@ -1,5 +1,8 @@
 node_modules
-db
+db/*
+!db/sessions
+db/sessions/*
+!db/sessions/.example.csv
 package-lock.json
 *.lnk
 build

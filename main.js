@@ -1,5 +1,6 @@
 //! imports
 const input = require("input");
+const moment = require("moment");
 const { existsSync, mkdirSync, writeFileSync, createWriteStream } = require("fs");
 const { red, green } = require("colors/safe");
 
@@ -7,6 +8,7 @@ const { red, green } = require("colors/safe");
 
 //! constant variables
 const diceValues = [100, 20, 12, 10, 8, 6, 4];
+const sessionName = moment().subtract(6, "h").format("D-M-YYYY");
 
 
 
@@ -14,13 +16,20 @@ const diceValues = [100, 20, 12, 10, 8, 6, 4];
 if (!existsSync("./db")) {
     mkdirSync("./db");
 }
+if (!existsSync("./db/sessions")) {
+    mkdirSync("./db/sessions");
+}
 if (!existsSync("./db/data.csv")) {
     writeFileSync("./db/data.csv", "type, value");
 }
+if (!existsSync(`./db/sessions/${sessionName}.csv`)) {
+    writeFileSync(`./db/sessions/${sessionName}.csv`, "type, value");
+}
 
 const stream = createWriteStream("./db/data.csv", { flags: 'a' });
+const sessionStream = createWriteStream(`./db/sessions/${sessionName}.csv`, { flags: 'a' });
 
-main().then(function () { stream.end(); });
+main().then(function () { stream.end(); sessionStream.end(); });
 
 
 //! main loop
@@ -76,6 +85,7 @@ async function main() {
 function addToCSV(inputDice, inputNumber) {
     if (inputNumber <= diceValues[inputDice]) {
         stream.write(`\nd${diceValues[inputDice]},${inputNumber}`);
+        sessionStream.write(`\nd${diceValues[inputDice]},${inputNumber}`);
         console.log(green("added!")); emptyLine();
     } else {
         emptyLine(3); console.log(red("That number does not correspond to that dice")); emptyLine();

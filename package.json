@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
-    "input": "^1.0.1"
+    "input": "^1.0.1",
+    "moment": "^2.25.3"
   },
   "devDependencies": {
     "@lorki97/node-resourcehacker": "^1.3.1",
